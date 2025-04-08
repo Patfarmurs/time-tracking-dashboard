@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0f172a;
+    color: #ffffff;
+}
+.dashboard {
+    display: flex;
+    gap: 60px;
+    width: 1100px;
+    align-items: start;
+}
+.main-section {
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main-grid {
+    background: #5746ea;
+    border-radius: 12px 12px 12px 12px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 222px;
+}
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 10px;
+}
+.main-placeholder {
+    background: #1e293b;
+    border-radius: 12px 12px 12px 12px;
+    width: 241px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: -10px;
+    cursor: pointer;
+}
+.main-placeholder span {
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+.main-placeholder span:hover {
+    background-color: #334155;
+}
+.main-placeholder span.active {
+    background-color: #334155;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 0;
+}
+.grid {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.grid::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px 12px 0 0;
+    z-index: 0;
+}
+.grid .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+.grid h3 {
+    margin: 0;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.grid p {
+    margin: 5px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.grid small {
+    color: #94a3b8;
+}
+@media screen and (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        padding: 20px;
+    }
+    .main-section {
+        width: 100%;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}

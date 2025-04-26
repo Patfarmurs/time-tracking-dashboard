@@ -1,78 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-
-    <title>Frontend Mentor | Time tracking dashboard</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="dashboard">
-      <div class="main-section">
-          <div class="main-grid">
-              <div class="profile-section">
-                  <div class="profile-image"></div>
-                  <h2>Jeremy Robson</h2>
-              </div>
-          </div>
-          <div class="main-placeholder">
-              <span class="active">Daily</span>
-              <span>Weekly</span>
-              <span>Monthly</span>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="timeframe-card.css" />
+</head>
+<body>
+  <main>
+    <section class="profile">
+      <div class="profile-info">
+        <img src="images/image-jeremy.png" alt="Jeremy Robson image" />
+        <div class="report-name">
+          <span>Report for</span>
+          <p>Jeremy Robson</p>
+        </div>
       </div>
-      <div class="grid-container">
-          <div class="grid">
-              <div class="header"><h3>Work</h3></div>
-              <p>32hrs</p>
-              <small>Last Week - 36hrs</small>
-          </div>
-          <div class="grid">
-              <div class="header"><h3>Play</h3></div>
-              <p>10hrs</p>
-              <small>Last Week - 8hrs</small>
-          </div>
-          <div class="grid">
-              <div class="header"><h3>Study</h3></div>
-              <p>4hrs</p>
-              <small>Last Week - 7hrs</small>
-          </div>
-          <div class="grid">
-              <div class="header"><h3>Exercise</h3></div>
-              <p>4hrs</p>
-              <small>Last Week - 5hrs</small>
-          </div>
-          <div class="grid">
-              <div class="header"><h3>Social</h3></div>
-              <p>5hrs</p>
-              <small>Last Week - 10hrs</small>
-          </div>
-          <div class="grid">
-              <div class="header"><h3>Self Care</h3></div>
-              <p>2hrs</p>
-              <small>Last Week - 2hrs</small>
-          </div>
+      <div class="toggle-buttons" id="toggle-buttons">
+        <button id="daily">Daily</button>
+        <button id="weekly" class="active-btn">Weekly</button>
+        <button id="monthly">Monthly</button>
       </div>
+    </section>
+
+    <section class="activity" id="activity-container">
+      <div class="timeframe-card work" id="work">
+        <img class="activity-icon" src="images/icon-work.svg" alt="work icon" />
+        <div class="content">
+          <div class="content-title">
+            <span class="title">Work</span>
+            <span class="more"></span>
+          </div>
+          <div class="content-timeframe">
+            <p class="current">32hrs</p>
+            <p class="previous">Last Week - 36hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeframe-card play" id="play">
+        <img class="activity-icon" src="images/icon-play.svg" alt="play icon" />
+        <div class="content">
+          <div class="content-title">
+            <span class="title">Play</span>
+            <span class="more"></span>
+          </div>
+          <div class="content-timeframe">
+            <p class="current">10hrs</p>
+            <p class="previous">Last Week - 8hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeframe-card study" id="study">
+        <img class="activity-icon" src="images/icon-study.svg" alt="study icon" />
+        <div class="content">
+          <div class="content-title">
+            <span class="title">Study</span>
+            <span class="more"></span>
+          </div>
+          <div class="content-timeframe">
+            <p class="current">4hrs</p>
+            <p class="previous">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeframe-card exercise" id="exercise">
+        <img class="activity-icon" src="images/icon-exercise.svg" alt="exercise icon" />
+        <div class="content">
+          <div class="content-title">
+            <span class="title">Exercise</span>
+            <span class="more"></span>
+          </div>
+          <div class="content-timeframe">
+            <p class="current">4hrs</p>
+            <p class="previous">Last Week - 5hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeframe-card social" id="social">
+        <img class="activity-icon" src="images/icon-social.svg" alt="social icon" />
+        <div class="content">
+          <div class="content-title">
+            <span class="title">Social</span>
+            <span class="more"></span>
+          </div>
+          <div class="content-timeframe">
+            <p class="current">5hrs</p>
+            <p class="previous">Last Week - 3hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeframe-card self-care" id="self-care">
+        <img class="activity-icon" src="images/icon-self-care.svg" alt="self-care icon" />
+        <div class="content">
+          <div class="content-title">
+            <span class="title">Self Care</span>
+            <span class="more"></span>
+          </div>
+          <div class="content-timeframe">
+            <p class="current">2hrs</p>
+            <p class="previous">Last Week - 4hrs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Patrick Mukula</a>.
   </div>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
-  </body>
+</body>
 </html>

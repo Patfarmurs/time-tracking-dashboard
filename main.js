@@ -8,7 +8,7 @@ fetch("data.json")
   .then((responseData) => {
     responseData.forEach((cardData) => {
       timeframes.push({
-        cardID: cardData.title.toLowerCase(), 
+        cardID: cardData.title.toLowerCase().replace(" ", "-"), 
         tf: cardData.timeframes
       });
     });

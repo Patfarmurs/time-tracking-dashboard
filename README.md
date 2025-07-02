@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [(https://github.com/Patfarmurs/time-tracking-dashboard)]
-- Live Site URL: [(https://patfarmurs.github.io/time-tracking-dashboard/)]
+- Solution URL: https://github.com/Patfarmurs/time-tracking-dashboard
+- Live Site URL: https://patfarmurs.github.io/time-tracking-dashboard/
 
 ## My process
 
@@ -108,5 +108,3 @@ As I build more data-driven interfaces, I want to optimize DOM updates, loading 
 - A huge thanks to Frontend Mentor for providing such thoughtful and well-designed challenges that sharpen real-world frontend skills.
 - Special appreciation to tortiman for the inspiration—browsing their solution gave me new perspectives on layout structure and data handling techniques.
 - And lastly, cheers to the broader developer community whose shared code, articles, and insight continue to guide my learning every step of the way.
-
-

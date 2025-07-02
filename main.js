@@ -16,29 +16,35 @@ fetch("data.json")
     const activityCards = Array.from(activityContainer.children);
 
     function editTimeframe(cardElement, timeframe) {
-      timeframes.forEach((tf) => {
-        if (cardElement.id === tf.cardID) {
-          cardElement.querySelector(".current").classList.remove("appear");
-          cardElement.querySelector(".previous").classList.remove("appear");
+  const timeframeLabels = {
+    daily: "Yesterday",
+    weekly: "Last Week",
+    monthly: "Last Month",
+  };
 
-          cardElement.querySelector(".current").classList.add("fade");
-          cardElement.querySelector(".previous").classList.add("fade");
+  timeframes.forEach((tf) => {
+    if (cardElement.id === tf.cardID) {
+      cardElement.querySelector(".current").classList.remove("appear");
+      cardElement.querySelector(".previous").classList.remove("appear");
 
-          setTimeout(() => {
-            cardElement.querySelector(".current").textContent = `${tf.tf[timeframe].current}hrs`;
-            cardElement.querySelector(".previous").textContent = `Last ${timeframe.charAt(0).toUpperCase() + timeframe.slice(1)} - ${tf.tf[timeframe].previous}hrs`;
+      cardElement.querySelector(".current").classList.add("fade");
+      cardElement.querySelector(".previous").classList.add("fade");
 
-            cardElement.querySelector(".current").classList.remove("fade");
-            cardElement.querySelector(".previous").classList.remove("fade");
+      setTimeout(() => {
+        const label = timeframeLabels[timeframe] || "";
+        cardElement.querySelector(".current").textContent = `${tf.tf[timeframe].current}hrs`;
+        cardElement.querySelector(".previous").textContent = `${label} - ${tf.tf[timeframe].previous}hrs`;
 
-            cardElement.querySelector(".current").classList.add("appear");
-            cardElement.querySelector(".previous").classList.add("appear");
-          }, 505);
-        }
-      });
+        cardElement.querySelector(".current").classList.remove("fade");
+        cardElement.querySelector(".previous").classList.remove("fade");
+
+        cardElement.querySelector(".current").classList.add("appear");
+        cardElement.querySelector(".previous").classList.add("appear");
+      }, 505);
     }
-
-    toggleButtons.forEach((button) => {
+  });
+}
+toggleButtons.forEach((button) => {
       button.addEventListener("click", () => {
         toggleButtons.forEach((btn) => btn.classList.remove("active-btn"));
         button.classList.add("active-btn");
@@ -50,4 +56,4 @@ fetch("data.json")
     // Default view setup
     toggleButtons.find((btn) => btn.id === "weekly").click();
   })
-  .catch((error) => console.error("Error fetching JSON data:", error));
+  .catch((error) => console.error("Error fetching JSON data:", error));    
